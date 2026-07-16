@@ -6,9 +6,9 @@ single muted accent. No build step, no dependencies.
 
 ## Design notes
 
-- **Palette** — warm off-white "paper" with soft-ink text and a muted
-  terracotta-brown accent. Includes a light/dark theme (respects system
-  preference, remembers your choice).
+- **Palette** — warm off-white "paper" with soft-ink text and a muted Nordic
+  slate-blue accent. Includes a light/dark theme (respects system preference,
+  remembers your choice).
 - **Type** — [Fraunces](https://fonts.google.com/specimen/Fraunces) for
   headings, [Inter](https://fonts.google.com/specimen/Inter) for body, loaded
   from Google Fonts.

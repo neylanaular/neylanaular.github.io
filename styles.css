@@ -10,9 +10,9 @@
   --ink: #1c1b19;
   --ink-soft: #55524c;
   --ink-faint: #8a867e;
-  --line: #e3ded4;
-  --accent: #7c5c43; /* muted terracotta-brown */
-  --accent-soft: #a98a6d;
+  --line: #e2e2dd;
+  --accent: #4a6572; /* muted Nordic slate-blue */
+  --accent-soft: #8aa0aa;
 
   --max: 62rem;
   --gutter: clamp(1.25rem, 5vw, 4rem);
@@ -28,9 +28,9 @@
   --ink: #ece8df;
   --ink-soft: #b6b1a5;
   --ink-faint: #837f74;
-  --line: #2c2a22;
-  --accent: #c79a76;
-  --accent-soft: #a98a6d;
+  --line: #262a2c;
+  --accent: #8fb0bd;
+  --accent-soft: #6f8b97;
 }
 
 * { box-sizing: border-box; }
@@ -286,6 +286,33 @@ main {
   color: var(--ink-soft);
   font-size: 0.95rem;
   line-height: 1.55;
+}
+
+/* Dissertation feature */
+.feature {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  background: var(--paper-raised);
+  padding: 1.9rem 1.8rem;
+}
+.feature__kicker {
+  margin: 0 0 0.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.feature__title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1rem + 0.9vw, 1.5rem);
+  line-height: 1.25;
+  margin: 0 0 1rem;
+}
+.feature__text {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
 }
 
 /* Publications */
