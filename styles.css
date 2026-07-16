@@ -445,6 +445,33 @@ main {
 }
 .teaching dd { margin: 0; color: var(--ink-soft); }
 
+/* Groups & networks */
+.affil { list-style: none; margin: 0; padding: 0; }
+.affil__item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem 1.5rem;
+  align-items: baseline;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.affil__item:first-child { padding-top: 0; }
+.affil__name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.12rem;
+  margin: 0 0 0.4rem;
+}
+.affil__role { margin: 0; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.55; }
+.affil__link {
+  font-size: 0.85rem;
+  color: var(--accent);
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease;
+}
+.affil__link:hover { border-color: var(--accent); }
+
 /* Contact */
 .contact { display: grid; gap: 1rem; }
 .contact__line {
@@ -511,6 +538,7 @@ main {
   }
   .pub__link { justify-self: start; margin-top: 0.4rem; }
   .note { grid-template-columns: 1fr; gap: 0.15rem; }
+  .affil__item { grid-template-columns: 1fr; gap: 0.5rem; }
   .contact__line { grid-template-columns: 1fr; gap: 0.25rem; }
   .site-footer { flex-direction: column; gap: 0.4rem; }
 }
