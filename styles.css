@@ -339,6 +339,60 @@ main {
 }
 .btn:hover { background: var(--ink); transform: translateY(-1px); }
 
+/* Field notes */
+.notes-head { margin: 2.4rem 0 0.4rem; }
+.notes-head__title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+.notes-head__sub {
+  margin: 0 0 0.6rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.notes-head__sub a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent-soft);
+  padding-bottom: 1px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.notes-head__sub a:hover { color: var(--accent); border-color: var(--accent); }
+
+.notes { list-style: none; margin: 0.6rem 0 0; padding: 0; }
+.note {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1.25rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.note:first-child { padding-top: 0; }
+.note__date {
+  font-family: var(--serif);
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+.note__title {
+  font-weight: 500;
+  position: relative;
+  width: fit-content;
+}
+.note__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.28s ease;
+}
+.note__title:hover { color: var(--accent); }
+.note__title:hover::after { width: 100%; }
+
 /* Publications */
 .pub-list {
   list-style: none;
@@ -456,6 +510,7 @@ main {
     gap: 0.4rem;
   }
   .pub__link { justify-self: start; margin-top: 0.4rem; }
+  .note { grid-template-columns: 1fr; gap: 0.15rem; }
   .contact__line { grid-template-columns: 1fr; gap: 0.25rem; }
   .site-footer { flex-direction: column; gap: 0.4rem; }
 }
