@@ -312,6 +312,30 @@ main {
   line-height: 1.2;
 }
 .callout__text { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+.callout__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) 1fr;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.callout__poster {
+  display: block;
+  line-height: 0;
+}
+.callout__poster img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  box-shadow: 0 8px 24px -14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.callout__poster:hover img {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.45);
+}
+.callout__aside { min-width: 0; }
 .callout__actions {
   margin: 1.4rem 0 0;
   display: flex;
@@ -580,6 +604,8 @@ main {
   .pub__link { justify-self: start; margin-top: 0.4rem; }
   .note { grid-template-columns: 1fr; gap: 0.15rem; }
   .affil__item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .callout__grid { grid-template-columns: 1fr; gap: 1.3rem; }
+  .callout__poster { max-width: 22rem; }
   .contact__line { grid-template-columns: 1fr; gap: 0.25rem; }
   .site-footer { flex-direction: column; gap: 0.4rem; }
 }
