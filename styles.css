@@ -384,6 +384,7 @@ main {
   background: var(--paper-raised);
   padding: 1.9rem 1.8rem;
 }
+.feature + .feature { margin-top: 1.6rem; }
 .feature__kicker {
   margin: 0 0 0.8rem;
   font-size: 0.75rem;
