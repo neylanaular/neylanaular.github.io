@@ -188,6 +188,11 @@ main {
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 1.4rem;
+  line-height: 1.75;
+}
+/* Keep each half intact so the line breaks at the separator, not mid-phrase. */
+@media (min-width: 32rem) {
+  .hero__eyebrow span { white-space: nowrap; }
 }
 .hero__name {
   font-family: var(--serif);
