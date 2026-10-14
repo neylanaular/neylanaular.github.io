@@ -188,7 +188,7 @@ main {
   font-size: clamp(2.9rem, 8vw, 5.25rem);
   line-height: 1.02;
   letter-spacing: -0.02em;
-  margin: 0 0 1.1rem;
+  margin: 0 0 1.45rem;
 }
 .hero__field,
 .hero__topic {
@@ -200,6 +200,16 @@ main {
 }
 .hero__field { color: var(--accent); }
 .hero__topic { color: var(--ink-soft); margin-bottom: 1.9rem; }
+/* Break the lists at the separators rather than inside a term. */
+.hero__field span,
+.hero__topic span { white-space: nowrap; }
+@media (max-width: 34rem) {
+  .hero__field,
+  .hero__topic {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+}
 .hero__lede {
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
   color: var(--ink-soft);
