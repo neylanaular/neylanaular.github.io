@@ -182,26 +182,24 @@ main {
   padding: clamp(4rem, 12vw, 9rem) 0 var(--section-gap);
   max-width: 40rem;
 }
-.hero__eyebrow {
-  font-size: 0.8rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 1.4rem;
-  line-height: 1.75;
-}
-/* Keep each half intact so the line breaks at the separator, not mid-phrase. */
-@media (min-width: 32rem) {
-  .hero__eyebrow span { white-space: nowrap; }
-}
 .hero__name {
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(2.9rem, 8vw, 5.25rem);
   line-height: 1.02;
   letter-spacing: -0.02em;
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.1rem;
 }
+.hero__field,
+.hero__topic {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.75;
+  margin: 0;
+}
+.hero__field { color: var(--accent); }
+.hero__topic { color: var(--ink-soft); margin-bottom: 1.9rem; }
 .hero__lede {
   font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
   color: var(--ink-soft);
