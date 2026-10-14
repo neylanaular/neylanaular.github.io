@@ -358,9 +358,17 @@ main {
   margin-top: 1.2rem;
 }
 .feature + .callout { margin-top: 1.6rem; }
+.callout + .feature { margin-top: 1.6rem; }
 .callout__poster {
   display: block;
   line-height: 0;
+}
+/* The poster wrapper zeroes line-height for the image, so restore it here. */
+.callout__caption {
+  margin: 0.6rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
 }
 .callout__poster img {
   width: 100%;
