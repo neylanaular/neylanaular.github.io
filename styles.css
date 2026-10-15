@@ -198,7 +198,7 @@ main {
   line-height: 1.75;
   margin: 0;
 }
-.hero__field { color: var(--accent); }
+.hero__field { color: var(--accent); margin-bottom: 1.9rem; }
 .hero__topic { color: var(--ink-soft); margin-bottom: 1.9rem; }
 /* Break the lists at the separators rather than inside a term. */
 .hero__field span,
