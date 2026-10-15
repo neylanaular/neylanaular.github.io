@@ -53,4 +53,46 @@
   // --- Footer year -------------------------------------------------------
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
+
+  // --- Copy email instead of opening a mail app --------------------------
+  function fallbackCopy(text) {
+    const field = document.createElement("textarea");
+    field.value = text;
+    field.setAttribute("readonly", "");
+    field.style.position = "absolute";
+    field.style.left = "-9999px";
+    document.body.appendChild(field);
+    field.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
+    document.body.removeChild(field);
+    return ok;
+  }
+
+  function confirmCopy(link) {
+    const status = link.nextElementSibling;
+    if (!status || !status.classList.contains("copy-status")) return;
+    status.textContent = "Copied";
+    window.clearTimeout(link._copyTimer);
+    link._copyTimer = window.setTimeout(function () {
+      status.textContent = "";
+    }, 2000);
+  }
+
+  document.querySelectorAll("a.js-copy-email").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const email = (link.getAttribute("href") || "").replace(/^mailto:/i, "");
+      if (!email) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function () {
+          confirmCopy(link);
+        }).catch(function () {
+          if (fallbackCopy(email)) confirmCopy(link);
+        });
+      } else if (fallbackCopy(email)) {
+        confirmCopy(link);
+      }
+    });
+  });
 })();

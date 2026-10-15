@@ -610,6 +610,14 @@ main {
   transition: color 0.25s ease, border-color 0.25s ease;
 }
 .contact__line a:hover { color: var(--accent); border-color: var(--accent); }
+.copy-status {
+  margin-left: 0.7rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.copy-status:empty { display: none; }
 .contact__set { display: flex; flex-wrap: wrap; gap: 1.25rem; }
 
 /* Footer */
