@@ -84,14 +84,17 @@
       event.preventDefault();
       const email = (link.getAttribute("href") || "").replace(/^mailto:/i, "");
       if (!email) return;
+      const copied = function () { confirmCopy(link); };
+      const openMail = function () { window.location.href = link.href; };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(email).then(function () {
-          confirmCopy(link);
-        }).catch(function () {
-          if (fallbackCopy(email)) confirmCopy(link);
+        navigator.clipboard.writeText(email).then(copied).catch(function () {
+          if (fallbackCopy(email)) copied();
+          else openMail();
         });
       } else if (fallbackCopy(email)) {
-        confirmCopy(link);
+        copied();
+      } else {
+        openMail();
       }
     });
   });
